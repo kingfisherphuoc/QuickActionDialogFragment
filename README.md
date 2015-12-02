@@ -92,7 +92,8 @@ mySampleDialogFragment.show(getSupportFragmentManager(), null);
 ```
 2. The Up Arrow Icon of `ImageView` must be declared inside `LinearLayout` with `vertical` orientation (Otherwise the position of arrow will not accurate)
 3. The current version of Library only supports `DialogFragment` with left and top gravity. You should be careful when using it!
-## Upcoming Version
+
+## Upcoming Version:
 I'm really lazy man, so when I have free time or there are many requests, I will implement the below features:
 1. Support Right, Top Gravity with up arrow
 2. Support Left, Bottom Gravity with down arrow

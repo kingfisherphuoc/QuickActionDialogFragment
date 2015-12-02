@@ -109,6 +109,7 @@ public abstract class QuickActionDialogFragment extends DialogFragment {
      * Show Arrow Icon center of Anchor View
      */
     private void setupImageIcon() {
+        if (ivArrow == null) return;// just show, dont care about the position of arrow icon
         final LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) ivArrow.getLayoutParams();
         params.leftMargin = mAnchorLocation[0] + mAnchorWidth / 2;
 

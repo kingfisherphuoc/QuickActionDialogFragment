@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.kingfisherphuoc.quickactiondialog.QuickActionDialogFragment;
 
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected int getArrowImageViewId() {
             return R.id.ivArrow;
+//            return 0; that mean you donot have an arrow
         }
 
         @Override
@@ -63,7 +65,12 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             View view = super.onCreateView(inflater, container, savedInstanceState);
-
+            view.findViewById(R.id.btnSample).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(getContext(), "Button inside Dialog!!", Toast.LENGTH_SHORT).show();
+                }
+            });
 
             return view;
         }

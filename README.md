@@ -95,6 +95,7 @@ mySampleDialogFragment.show(getSupportFragmentManager(), null);
 
 ## Upcoming Version:
 I'm really lazy man, so when I have free time or there are many requests, I will implement the below features:
+
 1. Support Right, Top Gravity with up arrow
 2. Support Left, Bottom Gravity with down arrow
 3. Support Right, Bottom Gravity with down Arrow

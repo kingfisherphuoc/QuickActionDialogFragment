@@ -5,6 +5,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,7 +19,7 @@ import android.widget.LinearLayout;
 /**
  * Created by kingfisher on 12/2/15.
  */
-public abstract class KMBaseArrowFragment extends DialogFragment {
+public abstract class QuickActionDialogFragment extends DialogFragment {
 
     protected ImageView ivArrow;
     private View mAnchorView;
@@ -28,9 +29,11 @@ public abstract class KMBaseArrowFragment extends DialogFragment {
      *
      * @param anchorView
      */
-    public void setAnchorView(View anchorView) {
+    public QuickActionDialogFragment setAnchorView(View anchorView) {
         this.mAnchorView = anchorView;
+        return this;
     }
+
 
     /**
      * get id of arrow image view so this image can be center and below anchorview
@@ -66,6 +69,7 @@ public abstract class KMBaseArrowFragment extends DialogFragment {
         return false;
     }
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(getLayout(), container, false);
@@ -85,9 +89,6 @@ public abstract class KMBaseArrowFragment extends DialogFragment {
      * Setup position of dialog and its arrow
      */
     protected void setupDialogPosition() {
-        if (mAnchorView == null) { // throw exception to other
-            throw new IllegalStateException("AnchorView not found! You must set AnchorView first");
-        }
         // setup the dialog
         getDialog().setCanceledOnTouchOutside(isCanceledOnTouchOutside());
         getDialog().getWindow().setGravity(Gravity.LEFT | Gravity.TOP);
@@ -96,10 +97,11 @@ public abstract class KMBaseArrowFragment extends DialogFragment {
         p.height = ViewGroup.LayoutParams.MATCH_PARENT;
         p.y = 0;
         // margin top this dialog
-        if (isStatusBarVisible()) {
-            p.y += getStatusBarHeight();
-        }
         p.y += mAnchorLocation[1] + mAnchorHeight;
+        if (isStatusBarVisible()) {
+            p.y -= getStatusBarHeight();
+        }
+        Log.i(TAG, "margin top: " + p.y);
         getDialog().getWindow().setAttributes(p);
     }
 
@@ -152,13 +154,20 @@ public abstract class KMBaseArrowFragment extends DialogFragment {
      * Find anchor view size
      */
     private void getAnchorViewSizeAndPosition() {
+        if (mAnchorView == null) { // throw exception to other
+            throw new IllegalStateException("AnchorView not found! You must set AnchorView first");
+        }
         // find anchor location 0: left, 1: top
         mAnchorView.getLocationInWindow(mAnchorLocation);
         // find anchorview width, height
         mAnchorView.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
         mAnchorWidth = mAnchorView.getWidth();
         mAnchorHeight = mAnchorView.getHeight();
+        Log.i(TAG, "Anchor Location: left: " + mAnchorLocation[0] + ", top: " + mAnchorLocation[1]);
+        Log.i(TAG, "Anchor Width: " + mAnchorWidth + ", height: " + mAnchorHeight);
     }
+
+    private static final String TAG = "QuickActionDialogFragment";
 
 
     @Override

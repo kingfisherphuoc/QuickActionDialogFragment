@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.kingfisherphuoc.quickactiondialog.AlignmentFlag;
 import com.kingfisherphuoc.quickactiondialog.QuickActionDialogFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 mySampleDialogFragment = new MySampleDialogFragment();
                 mySampleDialogFragment.setAnchorView(buttonShow);
+                mySampleDialogFragment.setAligmentFlags(AlignmentFlag.ALIGN_ANCHOR_VIEW_LEFT | AlignmentFlag.ALIGN_ANCHOR_VIEW_BOTTOM);
                 mySampleDialogFragment.show(getSupportFragmentManager(), null);
             }
         });

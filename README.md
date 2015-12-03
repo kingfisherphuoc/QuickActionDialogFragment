@@ -2,9 +2,12 @@
 After longtime searching in GG to find a way to show Quick Action Dialog with up Arrow in the top of dialog, I failed!! Therefore, I create This Library to help lazy devs as me to show quick action view in a dialog fragment. Therefore, you can custom your quick action view easily even with: viewpager inside your quick action.
 
 ![alt sample](https://cloud.githubusercontent.com/assets/962484/11528816/a62c3ce6-991b-11e5-862b-fee09e89cb12.png)
+![alt sample](https://cloud.githubusercontent.com/assets/962484/11551602/61918946-99ad-11e5-97ea-249d832d4208.png)
+
 ## Usage
 1. You need to create your own `DialogFragment` class which `extends QuickActionDialogFragment` and `override` some abstract methods
 2. `setAnchorView(View)` before showing it.
+3. You can change Alignment of Dialog based on position of AnchorView (like RealativeLayout) with methods: `setAligmentFlags(AlignmentFlag.ALIGN_ANCHOR_VIEW_LEFT | AlignmentFlag.ALIGN_ANCHOR_VIEW_BOTTOM);`
 ```
 // Sample class
 public static class MySampleDialogFragment extends QuickActionDialogFragment {
@@ -76,6 +79,7 @@ public static class MySampleDialogFragment extends QuickActionDialogFragment {
 // Sample show dialog fragment
 mySampleDialogFragment = new MySampleDialogFragment();
 mySampleDialogFragment.setAnchorView(buttonShow);
+mySampleDialogFragment.setAligmentFlags(AlignmentFlag.ALIGN_ANCHOR_VIEW_LEFT | AlignmentFlag.ALIGN_ANCHOR_VIEW_BOTTOM);
 mySampleDialogFragment.show(getSupportFragmentManager(), null);
 ```
 ## Notice:

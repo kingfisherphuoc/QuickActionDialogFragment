@@ -83,7 +83,7 @@ mySampleDialogFragment.setAligmentFlags(AlignmentFlag.ALIGN_ANCHOR_VIEW_LEFT | A
 mySampleDialogFragment.show(getSupportFragmentManager(), null);
 ```
 ## Notice:
-1. You should dismiss this dialog when orientation change to avoid `anchor View` null.
+- You should dismiss this dialog when orientation change to avoid `anchor View` null:
 ```
  @Override
     protected void onSaveInstanceState(Bundle outState) {
@@ -94,8 +94,9 @@ mySampleDialogFragment.show(getSupportFragmentManager(), null);
         super.onSaveInstanceState(outState);
     }
 ```
-2. The Up Arrow Icon of `ImageView` must be declared inside `LinearLayout` with `vertical` orientation (Otherwise the position of arrow will not accurate)
-3. The current version of Library only supports `DialogFragment` with left and top gravity. You should be careful when using it!
+- The Up Arrow Icon of `ImageView` must be declared inside `LinearLayout` with `vertical` orientation (Otherwise the position of arrow will not accurate)
+- The current version of Library only supports `DialogFragment` with left and top gravity. You should be careful when using it!
+
 
 ## Upcoming Version:
 I'm really lazy man, so when I have free time or there are many requests, I will implement the below features:

@@ -5,7 +5,7 @@ After longtime searching in GG to find a way to show Quick Action Dialog with up
 ![alt sample](https://cloud.githubusercontent.com/assets/962484/11551602/61918946-99ad-11e5-97ea-249d832d4208.png)
 ## Gradle dependency
 
-compile 'com.kingfisherphuoc:quick-action-dialog-fragment:1.1'
+`compile 'com.kingfisherphuoc:quick-action-dialog-fragment:1.1'`
 
 ## Usage
 1. You need to create your own `DialogFragment` class which `extends QuickActionDialogFragment` and `override` some abstract methods

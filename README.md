@@ -3,6 +3,9 @@ After longtime searching in GG to find a way to show Quick Action Dialog with up
 
 ![alt sample](https://cloud.githubusercontent.com/assets/962484/11528816/a62c3ce6-991b-11e5-862b-fee09e89cb12.png)
 ![alt sample](https://cloud.githubusercontent.com/assets/962484/11551602/61918946-99ad-11e5-97ea-249d832d4208.png)
+## Gradle dependency
+
+compile 'com.kingfisherphuoc:quick-action-dialog-fragment:1.1'
 
 ## Usage
 1. You need to create your own `DialogFragment` class which `extends QuickActionDialogFragment` and `override` some abstract methods
@@ -101,4 +104,5 @@ mySampleDialogFragment.show(getSupportFragmentManager(), null);
 ## Upcoming Version:
 I'm really lazy man, so when I have free time or there are many requests, I will implement the below features:
 
-1. Support down,left,right arrow
+1. Support toRightOfView, toLeftOfView, toTopOfView, toBottomOfView
+2. Support down,left,right arrow

@@ -1,4 +1,4 @@
-# QuickActionDialogFragment
+# QuickActionDialogFragment  [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-QuickActionDialogFragment-green.svg?style=true)](https://android-arsenal.com/details/1/2927)
 After longtime searching in GG to find a way to show Quick Action Dialog with up Arrow in the top of dialog, I failed!! Therefore, I create This Library to help lazy devs as me to show quick action view in a dialog fragment. Therefore, you can custom your quick action view easily even with: viewpager inside your quick action.
 
 ![alt sample](https://cloud.githubusercontent.com/assets/962484/11528816/a62c3ce6-991b-11e5-862b-fee09e89cb12.png)
